@@ -1,0 +1,39 @@
+/* Global Page Name */  
+var getPageNameUrl = function(){
+	var pathName = window.location.pathname,
+		urlArray = pathName.substring(1,pathName.length-1).split('/'),
+		pageName,
+		domain = window.location.hostname;
+	urlArray.unshift(domain);
+	if (pathName === '/'){
+		pageName = domain;
+		return pageName;
+	} else {
+		pageName = urlArray.join(':');
+		return pageName;
+	}
+};
+
+s.pageName = getPageNameUrl();
+
+
+
+/* Example for domain, where the page lives on www.MyDomain.com */
+
+/* Global Page Name */  
+var getPageNameUrl = function(){
+	var pathName = window.location.pathname,
+		urlArray = pathName.substring(1,pathName.length-1).split('/'),
+		pageName,
+		domain = 'MyDomain';
+	urlArray.unshift(domain);
+	if (pathName === '/'){
+		pageName = domain;
+		return pageName;
+	} else {
+		pageName = urlArray.join(':');
+		return pageName;
+	}
+};
+
+s.pageName = getPageNameUrl();
